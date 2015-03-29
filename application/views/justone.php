@@ -1,27 +1,29 @@
 <div class="row">
-    <p>
-        Barker Bob's Burger Bar - Orders
-    </p>
+    <p><h3>
+        <b>Order Details - Receipt</b>
+        </p></h3>
+    <h5>
     <p>
         {filename} for {customer} ({type})
     </p>
-    <p>
-        Order Instructions: <br />
-        {special}
-    </p>
+    </h5>
+    <h6>
     <p>
         {burgers}
             <br />
-            *Burger #{num}* <br />
+            <i>*Burger #{num}* </i><br />
             Base: {patty} <br />
             Cheese: {cheese} <br />
             Toppings: {toppings} <br />
             Sauces: {sauces} <br />
-            Burger total: {cost} <br /><br />
-            Burger Instructions:<br />
-            {instructions}<br />
+            Special Instructions: {instructions}
+            <br/>
+    </p>
+    <p>
+            Cost of burger: {cost} <br /><br />
         {/burgers}
+    </h6>
         <br /><br />
-        Order TOTAL: ${total}
+        <b>Order TOTAL: ${total}</b>
     </p>
 </div>

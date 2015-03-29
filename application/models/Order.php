@@ -6,13 +6,12 @@
  * @author Adam
  */
 class Order extends CI_Model {
-    
+    public $burgers = array();
     protected $xml = null;
     public $customer;
     public $type;
-    public $instructions = "";
-    public $burgers = array();
-    public $total = 0.00;
+    public $instructions;
+    public $total;
     
     // Constructor
     public function __construct($filename = null) {
@@ -54,7 +53,6 @@ class Order extends CI_Model {
             
             if (isset($burger->cheeses['bottom']))
                 $cheeses .= $burger->cheeses['bottom'] . "(bottom)";
-            
             $burga['cheese'] = $cheeses;
             
             // Assign toppings
@@ -64,7 +62,6 @@ class Order extends CI_Model {
             foreach($burger->topping as $topping) {
                 $toppings .= $topping['type'] . ", ";
             }
-            
             $burga['toppings'] = $toppings;
             
             
@@ -75,14 +72,13 @@ class Order extends CI_Model {
             foreach($burger->sauce as $sauce) {
                 $sauces .= $sauce['type'] . ", ";
             }
-            
             $burga['sauces'] = $sauces;
             
             // Assign instructions
             if (isset($burger->instructions))
                 $burga['instructions'] = (string) $burger->instructions;
             else
-                $burga['instructions'] = "none";
+                $burga['instructions'] = "None";
             
             // Assign costs
             $cost = $this->burgerCost($burger);
