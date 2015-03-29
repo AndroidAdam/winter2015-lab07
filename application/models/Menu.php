@@ -26,12 +26,12 @@ class Menu extends CI_Model {
         }
 
         // build a full list of patties - approach 2
-        foreach ($this->$xml->patties->patty as $patty) {
+        foreach ($this->xml->patties->patty as $patty) {
             $record = new stdClass();
             $record->code = (string) $patty['code'];
             $record->name = (string) $patty;
             $record->price = (float) $patty['price'];
-            $patties[$record->code] = $record;
+            $this->patties[$record->code] = $record;
         }
     
         // Approach #2 used going forward
@@ -41,7 +41,7 @@ class Menu extends CI_Model {
             $record->code = (string) $cheese['code'];
             $record->name = (string) $cheese;
             $record->price = (float) $cheese['price'];
-            $cheeses[$record->code] = $record;
+            $this->cheeses[$record->code] = $record;
         }   
         
          // build a full list of toppings
@@ -50,7 +50,7 @@ class Menu extends CI_Model {
             $record->code = (string) $topping['code'];
             $record->name = (string) $topping;
             $record->price = (float) $topping['price'];
-            $toppings[$record->code] = $record;
+            $this->toppings[$record->code] = $record;
         }
         
         // build a full list of sauces
@@ -59,7 +59,7 @@ class Menu extends CI_Model {
             $record->code = (string) $sauce['code'];
             $record->name = (string) $sauce;
             $record->price = (float) $sauce['price'];
-            $sauces[$record->code] = $record;
+            $this->sauces[$record->code] = $record;
         }
     }
     
