@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Order #3 - Adam's ultimate feast, made to go!
+-->
+
+<!DOCTYPE order SYSTEM 'bonanza.dtd'>
+
+<order type="takeout">
+    <customer>Adam Jesse</customer>
+    <burger>
+        <patty type="bison" />
+        <cheeses top="brie" bottom="goat" />
+        <topping type="dill" />
+        <topping type="salsa" />
+        <topping type="bacon" />
+        <topping type="lettuce" />
+        <topping type="tomato" />
+        <sauce type="ketchup" /> 
+    </burger>
+    <burger>
+        <patty type="turkey" />
+        <cheeses top="gruyere" bottom="blue" />
+        <topping type="egg" />
+        <topping type="chilies" />
+        <topping type="avocado" />
+        <topping type="mushrooms" />
+        <sauce type="mayo" /> 
+        <instructions> Please don't forget the chuncky peanut butter ! </instructions>
+        <name>The Muenster Burger</name>
+    </burger>  
+</order>
